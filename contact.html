@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
   <head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <meta name="description" content="">
     <meta name="keywords" content=""><!--header的CSS-->
@@ -24,11 +24,17 @@
     <link rel="stylesheet" type="text/css" href="commons/footer/css/footer.css">
     <!-- 每頁title的CSS-->
     <link rel="stylesheet" type="text/css" href="commons/else/css/title.css">
-    <!-- 首頁AD的CSS-->
-    <link href="index/index-list/css/effects.min.css" rel="stylesheet">
-    <link href="index/index-list/css/index.css" rel="stylesheet">
-    <!-- video的CSS-->
-    <link href="index/video/video.css" rel="stylesheet">
+    <!-- 表單_CSS-->
+    <link rel="stylesheet" href="contact/css/contact.css"><!--ScrollWatch滾動淡入-->
+    <style>
+      .fade_in {
+      opacity: 0;
+      transition: opacity 2s;
+      }
+      .fade_in.scroll-watch-in-view {
+      opacity: 1;
+      }
+    </style>
   </head>
   <body oncontextmenu="window.event.returnValue=false">
     <!-- Start Navigation-->
@@ -85,45 +91,59 @@
       </div>
     </nav>
     <!-- End Navigation-->
-    <video autoplay="true" muted="true" loop="true" preload="auto" style="width: 100%; height: auto;">
-      <source src="index/video/index_video.mp4" type="video/mp4">
-      <source src="index/video/index_video.ogv" type="video/ogv">
-    </video>
-    <div class="index_banner"><img src="index/video/index_video.jpg" style="width: 100%"></div>
-    <div class="index-list">
-      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="hover ehover13"><a href="#"><img src="index/index-list/img/index_1.jpg" class="img-responsive">
-            <div class="overlay">
-              <h2>四季春清香濃烈帶點甜味的滋味，非常容易辨別對剛踏入茶葉領域的人來說是非常好入門的茶款。</h2>
-              <p>more <i aria-hidden="true" class="fa fa-leaf"></i></p>
-            </div></a></div>
-        <p class="product_tit">凍頂烏龍茶</p>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="hover ehover13"><a href="#"><img src="index/index-list/img/index_2.jpg" class="img-responsive">
-            <div class="overlay">
-              <h2>四季春清香濃烈帶點甜味的滋味，非常容易辨別對剛踏入茶葉領域的人來說是非常好入門的茶款。</h2>
-              <p>more <i aria-hidden="true" class="fa fa-leaf"></i></p>
-            </div></a></div>
-        <p class="product_tit">四季春碳培烏龍茶</p>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="hover ehover13"><a href="#"><img src="index/index-list/img/index_3.jpg" class="img-responsive">
-            <div class="overlay">
-              <h2>四季春清香濃烈帶點甜味的滋味，非常容易辨別對剛踏入茶葉領域的人來說是非常好入門的茶款。</h2>
-              <p>more <i aria-hidden="true" class="fa fa-leaf"></i></p>
-            </div></a></div>
-        <p class="product_tit">茉香綠茶</p>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="hover ehover13"><a href="#"><img src="index/index-list/img/index_4.jpg" class="img-responsive">
-            <div class="overlay">
-              <h2>四季春清香濃烈帶點甜味的滋味，非常容易辨別對剛踏入茶葉領域的人來說是非常好入門的茶款。</h2>
-              <p>more <i aria-hidden="true" class="fa fa-leaf"></i></p>
-            </div></a></div>
-        <p class="product_tit">普洱茶            </p>
-      </div>
+    <div data-scroll-watch="" class="fade_in title">
+      <div class="breadcrumbs"><a href="index.html">首頁</a> / <span>聯絡我們</span></div>
+      <h1 class="top_title">Contact</h1>
+      <div class="top_banner"><img src="commons/else/img/banner_contact.jpg" alt="Contact"></div>
     </div>
+    <div class="htmleaf-container">
+      <form class="cd-form floating-labels">
+        <fieldset>
+          <div class="icon">
+            <label for="cd-name" class="cd-label">姓名</label>
+            <input id="cd-name" type="text" name="cd-name" required="" class="user">
+          </div>
+          <div class="icon">
+            <label for="cd-country" class="cd-label">國家</label>
+            <input id="cd-country" type="text" name="cd-country" class="country">
+          </div>
+          <div class="icon">
+            <label for="cd-company" class="cd-label">公司</label>
+            <input id="cd-company" type="text" name="cd-company" class="company">
+          </div>
+          <div class="icon">
+            <label for="cd-telephone" class="cd-label">電話</label>
+            <input id="cd-telephone" type="text" name="cd-telephone" required="" class="telephone">
+          </div>
+          <div class="icon">
+            <label for="cd-email" class="cd-label">信箱</label>
+            <input id="cd-email" type="email" name="cd-email" required="" class="email error">
+          </div>
+        </fieldset>
+        <fieldset>
+          <div>
+            <h4>問題</h4>
+            <p class="cd-select icon">
+              <select class="budget">
+                <option value="0">產品問題</option>
+                <option value="1">售後服務</option>
+                <option value="2">合作提案</option>
+                <option value="3">其他問題</option>
+              </select>
+            </p>
+          </div>
+          <div class="icon">
+            <label for="cd-textarea" class="cd-label">內容</label>
+            <textarea id="cd-textarea" name="cd-textarea" required="" class="message"></textarea>
+          </div>
+          <div>
+            <input type="submit" value="確定送出">
+            <input type="reset" value="重新填寫">
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    
     <div class="footer">
       <div class="icon">
         <ul>
@@ -144,9 +164,9 @@
       </div>
       <div class="logo"><a href="index.html"><img src="commons/footer/img/logo.svg" alt=""></a></div>
       <div class="info">
-        <div class="line"><a href="" target="_blank">A . </a><br> <a href="tel:+">T . +</a><br> F . <br></div>
+        <div class="line"><a href="" target="_blank">A . </a><br> <a href="tel:+">T . +</a><br> F . +<br></div>
       </div>
-      <div class="copyright"><a href="copyright.html">智慧財產權聲明</a> © 2017 . All Rights Reserved </div>
+      <div class="copyright"><a href="copyright.html">智慧財產權聲明</a> © 2017 . All Rights Reserved</div>
     </div>
     <!-- Scroll to Top button selector-->
     <div><a class="to-top"><img src="commons/gototop/img/gototop.svg" alt=""></a></div>
@@ -171,5 +191,16 @@
       });
       });
     </script>
+    <!-- ScrollWatch滾動淡入-->
+    <script src="about/js/ScrollWatch-1.2.0.js"></script>
+    <script>
+      (function() {
+      var swInstance = new ScrollWatch({});
+      })();
+    </script>
+    <!-- 表單_JS-->
+    <script src="contact/js/jquery-2.1.1.js"></script>
+    <script src="contact/js/main.js"></script>
+    <script src="contact/js/modernizr.js"></script>
   </body>
 </html>
