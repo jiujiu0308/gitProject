@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
   <head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <meta name="description" content="">
     <meta name="keywords" content=""><!--header的CSS-->
@@ -24,11 +24,22 @@
     <link rel="stylesheet" type="text/css" href="commons/footer/css/footer.css">
     <!-- 每頁title的CSS-->
     <link rel="stylesheet" type="text/css" href="commons/else/css/title.css">
-    <!-- 首頁AD的CSS-->
-    <link href="index/index-list/css/effects.min.css" rel="stylesheet">
-    <link href="index/index-list/css/index.css" rel="stylesheet">
-    <!-- video的CSS-->
-    <link href="index/video/video.css" rel="stylesheet">
+    <!-- product_photo_CSS-->
+    <link href="product/product/css/jquery.bxslider.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="product/product/css/web_product.css">
+    <link rel="stylesheet" href="product/product/css/product.css">
+    <!-- 關於好茶 CSS-->
+    <link rel="stylesheet" href="product/product/css/product_int.css">
+    <link rel="stylesheet" href="product/product/css/video.css"><!--ScrollWatch滾動淡入-->
+    <style>
+      .fade_in {
+      opacity: 0;
+      transition: opacity 2s;
+      }
+      .fade_in.scroll-watch-in-view {
+      opacity: 1;
+      }
+    </style>
   </head>
   <body oncontextmenu="window.event.returnValue=false">
     <!-- Start Navigation-->
@@ -85,43 +96,147 @@
       </div>
     </nav>
     <!-- End Navigation-->
-    <video autoplay="true" muted="true" loop="true" preload="auto" style="width: 100%; height: auto;">
-      <source src="index/video/index_video.mp4" type="video/mp4">
-      <source src="index/video/index_video.ogv" type="video/ogv">
-    </video>
-    <div class="index_banner"><img src="index/video/index_video.jpg" style="width: 100%"></div>
-    <div class="index-list">
-      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="hover ehover13"><a href="#"><img src="index/index-list/img/index_1.jpg" class="img-responsive">
-            <div class="overlay">
-              <h2>四季春清香濃烈帶點甜味的滋味，非常容易辨別對剛踏入茶葉領域的人來說是非常好入門的茶款。</h2>
-              <p>more <i aria-hidden="true" class="fa fa-leaf"></i></p>
-            </div></a></div>
-        <p class="product_tit">凍頂烏龍茶</p>
+    <div data-scroll-watch="" class="fade_in title">
+      <div class="breadcrumbs"><a href="index.html">首頁</a> / <a href="productlist_1.html">好茶</a> / <span>四季春碳培烏龍茶</span></div>
+    </div>
+    <div id="product_detail">
+      <div class="main_info">
+        <div class="main_pic">
+          <div class="m_pic"><img id="zoom_03" src="product/product/img/p01_m.jpg" data-zoom-image="product/product/img/p01.jpg"></div>
+          <div id="thumb_pic">
+            <ul id="gallery_01">
+              <li><a href="#" data-image="product/product/img/p01_m.jpg" data-zoom-image="product/product/img/p01.jpg"><img id="zoom_03" src="product/product/img/p01_s.jpg"></a></li>
+              <li><a href="#" data-image="product/product/img/p02_m.jpg" data-zoom-image="product/product/img/p02.jpg"><img id="zoom_03" src="product/product/img/p02_s.jpg"></a></li>
+              <li><a href="#" data-image="product/product/img/p03_m.jpg" data-zoom-image="product/product/img/p03.jpg"><img id="zoom_03" src="product/product/img/p03_s.jpg"></a></li>
+              <li><a href="#" data-image="product/product/img/p01_m.jpg" data-zoom-image="product/product/img/p01.jpg"><img id="zoom_03" src="product/product/img/p01_s.jpg"></a></li>
+              <li><a href="#" data-image="product/product/img/p02_m.jpg" data-zoom-image="product/product/img/p02.jpg"><img id="zoom_03" src="product/product/img/p02_s.jpg"></a></li>
+              <li><a href="#" data-image="product/product/img/p03_m.jpg" data-zoom-image="product/product/img/p03.jpg"><img id="zoom_03" src="product/product/img/p03_s.jpg"></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="right_info">
+          <h3 class="product_tit">四季春碳培烏龍茶</h3>
+          <p class="subtitle">四季春清香濃烈帶點甜味的滋味，非常容易辨別對剛踏入茶葉領域的人來說是非常好入門的茶款。</p>
+          <table class="prod_table">
+            <tr>
+              <th></th>
+              <td>品種</td>
+              <td>烏龍茶</td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>茶乾外型</td>
+              <td>圓形球狀</td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>產區</td>
+              <td>南投</td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>海拔</td>
+              <td>100-600m</td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>採收方式</td>
+              <td>機採</td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>採收季節</td>
+              <td>春、冬</td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>EAN</td>
+              <td>12345678910</td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>發酵度</td>
+              <td>中發酵</td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>培火度</td>
+              <td>無培火</td>
+            </tr>
+          </table>
+          <div class="shop_link">
+            <h6>買好茶</h6><a href="http://www.pcstore.com.tw/" target="blank">
+              <p>PChome</p></a><a href="https://www.rakuten.com.tw/?l-id=rakuten_top_header_logo" target="blank">
+              <p>樂天商城</p></a>
+          </div>
+        </div>
+        <div class="mobile_slider">
+          <!-- 小尺寸用-->
+          <h3 class="product_tit">四季春碳培烏龍茶</h3>
+          <p class="subtitle">四季春清香濃烈帶點甜味的滋味，非常容易辨別對剛踏入茶葉領域的人來說是非常好入門的茶款。</p>
+          <ul class="bx_mobile">
+            <li><img src="product/product/img/p01.jpg"></li>
+            <li><img src="product/product/img/p02.jpg"></li>
+            <li><img src="product/product/img/p03.jpg"></li>
+            <li><img src="product/product/img/p01.jpg"></li>
+            <li><img src="product/product/img/p02.jpg"></li>
+            <li><img src="product/product/img/p03.jpg"></li>
+          </ul>
+          <table class="prod_table">
+            <tr>
+              <th></th>
+              <td>產區</td>
+              <td>南投</td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>海拔</td>
+              <td>100-600m</td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>採收方式</td>
+              <td>機採</td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>採收季節</td>
+              <td>春、冬</td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>產品編號</td>
+              <td>12345678910</td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>發酵度</td>
+              <td>無發酵</td>
+            </tr>
+            <tr>
+              <th></th>
+              <td>培火度</td>
+              <td>無培火</td>
+            </tr>
+          </table>
+          <div class="shop_link">
+            <h6>買好茶</h6><a href="http://www.pcstore.com.tw/" target="blank">
+              <p>PChome</p></a><a href="https://www.rakuten.com.tw/?l-id=rakuten_top_header_logo" target="blank">
+              <p>樂天商城</p></a>
+          </div>
+        </div>
       </div>
-      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="hover ehover13"><a href="#"><img src="index/index-list/img/index_2.jpg" class="img-responsive">
-            <div class="overlay">
-              <h2>四季春清香濃烈帶點甜味的滋味，非常容易辨別對剛踏入茶葉領域的人來說是非常好入門的茶款。</h2>
-              <p>more <i aria-hidden="true" class="fa fa-leaf"></i></p>
-            </div></a></div>
-        <p class="product_tit">四季春碳培烏龍茶</p>
+    </div>
+    <h2 class="main_title">關於好茶</h2>
+    <div class="product_int">
+      <div class="int_img"><img src="product/product/img/product_int.jpg"></div>
+      <div class="int_text">
+        <p>xx身兼茶農與茶商，主打海外市場。產品含各式烏龍茶紅茶、綠茶、不同海拔茶區，在xx都可以找到你想要的好茶！ 與經驗老道的茶師傅合作、所選茶葉品質穩定。茶葉均通過TTB台茶檢驗，無農藥殘留。全世界最好的烏龍茶，大禹嶺茶自產自銷，絕對無假貨之疑慮。熟知市場行情，第一手茶葉進貨，進貨價格較低。</p>
       </div>
-      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="hover ehover13"><a href="#"><img src="index/index-list/img/index_3.jpg" class="img-responsive">
-            <div class="overlay">
-              <h2>四季春清香濃烈帶點甜味的滋味，非常容易辨別對剛踏入茶葉領域的人來說是非常好入門的茶款。</h2>
-              <p>more <i aria-hidden="true" class="fa fa-leaf"></i></p>
-            </div></a></div>
-        <p class="product_tit">茉香綠茶</p>
-      </div>
-      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-        <div class="hover ehover13"><a href="#"><img src="index/index-list/img/index_4.jpg" class="img-responsive">
-            <div class="overlay">
-              <h2>四季春清香濃烈帶點甜味的滋味，非常容易辨別對剛踏入茶葉領域的人來說是非常好入門的茶款。</h2>
-              <p>more <i aria-hidden="true" class="fa fa-leaf"></i></p>
-            </div></a></div>
-        <p class="product_tit">普洱茶            </p>
+      <div class="int_video">
+        <div class="video-container">
+          <iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/cdo7xnT5g1U"></iframe>
+        </div>
       </div>
     </div>
     <div class="footer">
@@ -144,9 +259,9 @@
       </div>
       <div class="logo"><a href="index.html"><img src="commons/footer/img/logo.svg" alt=""></a></div>
       <div class="info">
-        <div class="line"><a href="" target="_blank">A . </a><br> <a href="tel:+">T . +</a><br> F . <br></div>
+        <div class="line"><a href="" target="_blank">A . </a><br> <a href="tel:+">T . +</a><br> F . +<br></div>
       </div>
-      <div class="copyright"><a href="copyright.html">智慧財產權聲明</a> © 2017 . All Rights Reserved </div>
+      <div class="copyright"><a href="copyright.html">智慧財產權聲明</a> © 2017 . All Rights Reserved</div>
     </div>
     <!-- Scroll to Top button selector-->
     <div><a class="to-top"><img src="commons/gototop/img/gototop.svg" alt=""></a></div>
@@ -171,5 +286,17 @@
       });
       });
     </script>
+    <!-- ScrollWatch滾動淡入-->
+    <script src="about/js/ScrollWatch-1.2.0.js"></script>
+    <script>
+      (function() {
+      var swInstance = new ScrollWatch({});
+      })();
+    </script>
+    <!-- product_photo_JS-->
+    <script src="product/product/js/jquery-2.1.3.min.js"></script>
+    <script src="product/product/js/jquery.bxslider.js"></script>
+    <script type="text/javascript" src="product/product/js/jquery.elevateZoom-3.0.8.min.js"></script>
+    <script src="product/product/js/web_product.js"></script>
   </body>
 </html>
